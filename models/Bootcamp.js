@@ -11,6 +11,7 @@ const BootcampSchema = new mongoose.Schema(
       trim: true,
       maxlength: [50, 'Name can not be more than 50 characters'],
     },
+    // URL friendly version of above mentioned name
     slug: String,
     description: {
       type: String,
@@ -41,6 +42,7 @@ const BootcampSchema = new mongoose.Schema(
     },
     location: {
       // GeoJSON Point
+      // enum means can only be this value
       type: {
         type: String,
         enum: ['Point'],
@@ -58,6 +60,7 @@ const BootcampSchema = new mongoose.Schema(
     },
     careers: {
       // Array of strings
+      // enum means can only be this value
       type: [String],
       required: true,
       enum: [
